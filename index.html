@@ -1,1 +1,172 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Scully - Computational Neuroscience Researcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px auto;
+            line-height: 1.6;
+            max-width: 1000px;
+            padding: 0 15px;
+        }
+        header {
+            text-align: center;
+        }
+        img {
+            border-radius: 10%;
+            width: 200px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin: 20px 0;
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            text-indent: -20px;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .full-width {
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            width: 100vw;
+            background-color: #f9f9f9;
+            padding: 20px 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            max-width: 100%;
+            padding: 0 15px;
+        }
+        .gallery img {
+            width: auto;
+            height: 200px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="avatar.jpg" alt="Profile Image">
+        <h1>James Scully</h1>
+        <p>PhD Candidate | Computational Neuroscience & Dynamical Systems Researcher</p>
+        <p>Bridging Theory and Application in Neural Dynamics, Chaos, and Control Systems</p>
+    </header>
+
+    <nav>
+        <a href="https://www.linkedin.com/in/james-scully-61734b40" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=kN0UzTIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+        <a href="CV.pdf" target="_blank">CV</a>
+        <a href="https://labs.ni.gsu.edu/ashilnikov/lab/lab.html" target="_blank">Shilnikov Lab</a>
+    </nav>
+
+    <section>
+        <h2>Research Interests</h2>
+        <p>
+            I’m fascinated by how biological systems achieve adaptability and resilience, whether it’s a neural circuit controlling locomotion or a chaotic system responding to perturbations. My work focuses on central pattern generators in nudibranchs—tiny neural networks that orchestrate movement—uncovering principles that could inform spinal implants and bio-inspired robotics. These elegant systems hold insights into adaptability and robustness in biological networks.
+        </p>
+        <p>
+            Beyond neuroscience, I’ve built computational tools to explore intricate bifurcation structures in chaotic systems, using symbolic dynamics, GPU acceleration, and advanced algorithms to map complex behaviors. Finding structure in what initially seems like complete disorder is deeply satisfying (and useful!).
+        </p>
+        <p>
+            Lately, I’ve been drawn to the intersection of control theory and biology, studying feedback mechanisms that drive adaptability in systems and exploring their potential for applications in engineering adaptive systems and understanding the resilience of ecosystems.
+        </p>
+    </section>
+
+    <section>
+        <h2>Publications</h2>
+        <ul>
+            <li><b>Scully, J. J.</b>, Neiman, A. B., & Shilnikov, A. L. “Measuring chaos in the Lorenz and Rössler models: Fidelity tests for reservoir computing.” <i>Chaos</i>, 2021. <a href="https://pubs.aip.org/aip/cha/article-pdf/doi/10.1063/5.0065044/14637842/093121_1_online.pdf" target="_blank">[Link]</a></li>
+            <li>Hinsley, C., <b>Scully, J. J.</b>, & Shilnikov, A. L. “Bifurcation structure of interval maps with orbits homoclinic to a saddle-focus.” <i>Ukrainian Mathematical Journal</i>, 2024. <a href="https://arxiv.org/pdf/2307.14518" target="_blank">[Link]</a></li>
+            <li><b>Scully, J. J.</b>, Bloom, D., Bouraman, J., & Shilnikov, A. L. “Pairing cellular and synaptic dynamics into building blocks of rhythmic neural circuits.” <i>Frontiers in Network Physiology</i>, 2024. <a href="https://www.frontiersin.org/journals/network-physiology/articles/10.3389/fnetp.2024.1397151/pdf" target="_blank">[Link]</a></li>
+            <li><b>Scully, J. J.</b>, Hinsley, C., Bloom, D., Meijer, H. G. E., & Shilnikov, A. L. “Oscillating slow currents induce widespread neuronal chaos.” <i>In Press</i>. <a href="https://arxiv.org/pdf/2411.06304" target="_blank">[Link]</a></li>
+        </ul>
+    </section>
+
+    <section class="full-width">
+        <h2 style="text-align: center;">Image Gallery</h2>
+        <p style="text-align: center;">Explore some visually striking images from my research:</p>
+        <div class="gallery" id="gallery">
+            <!-- Images will be dynamically added here -->
+        </div>
+    </section>
+
+    <script>
+           // Predefined list of image file names
+           const imageFiles = [
+               "images/img1.jpg",
+               "images/img2.jpg",
+               "images/img3.jpg",
+               "images/img4.jpg",
+               "images/img5.png",
+               "images/img6.jpg",
+               "images/img7.jpg",
+
+           ];
+
+           // Function to populate the gallery
+           function populateGallery() {
+               const gallery = document.getElementById('gallery');
+               imageFiles.forEach(file => {
+                   const img = document.createElement('img');
+                   img.src = file;
+                   img.alt = `Image from ${file}`;
+                   img.onclick = () => openImage(file); // Fullscreen view on click
+                   gallery.appendChild(img);
+               });
+           }
+
+           // Function to open an image in a new tab
+           function openImage(src) {
+               const newWindow = window.open("", "_blank");
+               newWindow.document.write(`<img src="${src}" alt="Image" style="width: 100%; height: auto;">`);
+           }
+
+           // Populate the gallery on page load
+           document.addEventListener('DOMContentLoaded', populateGallery);
+    </script>
+    <footer>
+        <p>© 2025 James Scully. All rights reserved.</p>
+    </footer>
+</body>
+</html>
